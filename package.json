@@ -1,8 +1,9 @@
 {
-  "name": "send-log-package",
-  "version": "1.0.0",
+  "name": "kxn-multilogger-util",
+  "version": "1.0.7",
   "description": "A package for sending logs from client and server in sitevision. Requires kxn-multilogger to be active in Sitevision.",
   "main": "src/sendLog.js",
+  "types": "src/sendLog.d.ts",
   "scripts": {
     "test": "echo \"No tests specified\" && exit 0"
   },
