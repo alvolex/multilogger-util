@@ -7,7 +7,7 @@ A simple logging utility for sending logs from both client and server environmen
 To install the package, run the following command:
 
 ```
-npm install send-log-package
+npm install kxn-multilogger-util
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ npm install send-log-package
 You can import the functions in your project as follows:
 
 ```javascript
-import { sendLogFromClient, sendLogFromServer } from 'send-log-package';
+import { sendLogFromClient, sendLogFromServer } from 'kxn-multilogger-util';
 ```
 
 ### Sending Logs from Client
@@ -25,7 +25,7 @@ import { sendLogFromClient, sendLogFromServer } from 'send-log-package';
 To send logs from the client, use the `sendLogFromClient` function:
 
 ```javascript
-sendLogFromClient('Your error log message', 'YourAppName');
+sendLogFromClient('Your error log message', 'YourAppName', ErrorTypes.ERROR);
 ```
 
 ### Sending Logs from Server
@@ -33,8 +33,13 @@ sendLogFromClient('Your error log message', 'YourAppName');
 To send logs from the server, use the `sendLogFromServer` function:
 
 ```javascript
-sendLogFromServer('Your error log message', 'YourAppName');
+sendLogFromServer('Your error log message', 'YourAppName', ErrorTypes.ERROR);
 ```
+### Error Types
+The `ErrorTypes` enum is used to specify the type of error. It includes the following types:
+- `ERROR`: Represents an error.
+- `WARNING`: Represents a warning.
+- `INFO`: Represents an informational message.
 
 ## License
 
