@@ -2,7 +2,7 @@ const logUtil = require("@sitevision/api/server/LogUtil");
 const requester = require("@sitevision/api/server/Requester");
 const portletContextUtil = require("@sitevision/api/server/PortletContextUtil");
 
-export function sendLogFromClient(errorLog, loggingAppName, logType = "error") {
+export function sendLogFromClient(errorLog, loggingAppName, logType= "error") {
     const formdata = new FormData();
 
     const requestOptions = {
