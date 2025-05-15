@@ -1,7 +1,3 @@
-const logUtil = require("@sitevision/api/server/LogUtil");
-const requester = require("@sitevision/api/server/Requester");
-const portletContextUtil = require("@sitevision/api/server/PortletContextUtil");
-
 export function sendLogFromClient(errorLog, loggingAppName, logType= "error") {
     const formdata = new FormData();
 
@@ -24,6 +20,10 @@ export function sendLogFromClient(errorLog, loggingAppName, logType= "error") {
 }
 
 export function sendLogFromServer(errorLog, loggingAppName, logType = "error") {
+    const logUtil = require("@sitevision/api/server/LogUtil");
+    const requester = require("@sitevision/api/server/Requester");
+    const portletContextUtil = require("@sitevision/api/server/PortletContextUtil");    
+
     const URI = portletContextUtil.getCurrentPage().getProperty('URL').getString();
     const baseURL = URI.substring(0, URI.indexOf("/", 8));
 
