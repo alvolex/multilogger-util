@@ -1,9 +1,7 @@
 {
   "name": "kxn-multilogger-util",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A package for sending logs from client and server in sitevision. Requires kxn-multilogger to be active in Sitevision.",
-  "main": "src/index.js",
-  "types": "src/sendLog.d.ts",
   "scripts": {
     "test": "echo \"No tests specified\" && exit 0"
   },
@@ -17,5 +15,27 @@
   "license": "MIT",
   "dependencies": {
     "@sitevision/api": "^1.0.0"
+  },
+  "exports": {
+    "./client": {
+      "import": "./src/client.js",
+      "require": "./src/client.js",
+      "types": "./src/client.d.ts"
+    },
+    "./server": {
+      "import": "./src/server.js",
+      "require": "./src/server.js",
+      "types": "./src/server.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "client": [
+        "./src/client.d.ts"
+      ],
+      "server": [
+        "./src/server.d.ts"
+      ]
+    }
   }
-} 
+}

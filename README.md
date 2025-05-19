@@ -17,7 +17,8 @@ npm install kxn-multilogger-util
 You can import the functions in your project as follows:
 
 ```javascript
-import { sendLogFromClient, sendLogFromServer } from 'kxn-multilogger-util';
+import { sendLogFromClient } from 'kxn-multilogger-util/client'; // For client-side logging
+import { sendLogFromServer } from 'kxn-multilogger-util/server'; // For server-side logging
 ```
 
 ### Sending Logs from Client
@@ -25,7 +26,7 @@ import { sendLogFromClient, sendLogFromServer } from 'kxn-multilogger-util';
 To send logs from the client, use the `sendLogFromClient` function:
 
 ```javascript
-sendLogFromClient('Your error log message', 'YourAppName', ErrorTypes.ERROR);
+sendLogFromClient('Your error log message', 'YourAppName', "error");
 ```
 
 ### Sending Logs from Server
@@ -33,10 +34,10 @@ sendLogFromClient('Your error log message', 'YourAppName', ErrorTypes.ERROR);
 To send logs from the server, use the `sendLogFromServer` function:
 
 ```javascript
-sendLogFromServer('Your error log message', 'YourAppName', ErrorTypes.ERROR);
+sendLogFromServer('Your error log message', 'YourAppName', "error");
 ```
 ### Error Types
-The `ErrorTypes` enum is used to specify the type of error. It includes the following types:
+The `ErrorType`-field is used to specify the type of error. It allows the following types, if none is specified, it defaults to `ERROR`:
 - `ERROR`: Represents an error.
 - `WARNING`: Represents a warning.
 - `INFO`: Represents an informational message.
