@@ -1,0 +1,1 @@
+export { sendLogFromClient } from "./sendLogFromClient";
